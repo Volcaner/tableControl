@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>tabel control</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div id="app" class="app">
+		<div id="tabelControl" class="tabelControlStyle"></div>
+	</div>
+</body>
+
+<script type="text/javascript" src="../../../lib/jquery.js"></script>
+<script type="text/javascript" src="js/tabelcontrolmain.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var TabelControlMain = new $.TabelControlMain();
+		var obj = {
+			selfId: "tabelControl",
+			searchObj:'',
+			tabelObj: {
+				items: [
+					{
+						id: "列表一",
+						width: "33.3%",
+						callback: function(){
+
+						}
+					},
+					{
+						id: "列表二",
+						width: "33.3%",
+						callback: function(){
+
+						}
+					},
+					{
+						id: "列表三",
+						width: "33.3%",
+						callback: function(){
+
+						}
+					}
+				]
+			},
+			btnObj: {
+				items: [
+					{
+						id: "添加"
+					},
+					{
+						id: "删除"
+					}
+				]
+			}
+		};
+		TabelControlMain.init(obj);
+	});
+</script>
+
+</html>
