@@ -3,59 +3,147 @@
 <head>
 	<meta charset="utf-8">
 	<title>tabel control</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="../tabelcontrol/css/main.css">
+	<link rel="stylesheet" type="text/css" href="../popshade/css/main.css">
 </head>
 <body>
-	<div id="app" class="app">
+	<div id="app" class="app" style="z-index: 0;">
 		<div id="tabelControl" class="tabelControlStyle"></div>
 	</div>
 </body>
 
 <script type="text/javascript" src="../../../lib/jquery.js"></script>
-<script type="text/javascript" src="js/tabelcontrolmain.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		var TabelControlMain = new $.TabelControlMain();
-		var obj = {
-			selfId: "tabelControl",
-			searchObj:'',
-			tabelObj: {
-				items: [
-					{
-						id: "列表一",
-						width: "33.3%",
-						callback: function(){
+		// 解决部分浏览器不支持ES6问题
+		var getBrowser = function(){    
+		    var ua = window.navigator.userAgent;    
+		    var isIE = !!window.ActiveXObject || "ActiveXObject" in window;    
+		    var isFirefox = ua.indexOf("Firefox") != -1;    
+		    var isOpera = window.opr != undefined;    
+		    var isChrome = ua.indexOf("Chrome") && window.chrome;    
+		    var isSafari = ua.indexOf("Safari") != -1 && ua.indexOf("Version") != -1;    
+		    if (isIE) {    
+		        return "IE";    
+		    } else if (isFirefox) {    
+		        return "Firefox";    
+		    } else if (isOpera) {    
+		        return "Opera";    
+		    } else if (isChrome) {    
+		        return "Chrome";    
+		    } else if (isSafari) {    
+		        return "Safari";    
+		    } else {    
+		        return "Unkown";    
+		    }    
+		}  
 
-						}
-					},
-					{
-						id: "列表二",
-						width: "33.3%",
-						callback: function(){
+		var linkNode = document.createElement("link"),scriptNode = document.createElement("script");  
+		linkNode.setAttribute("rel","stylesheet");  
+		linkNode.setAttribute("type","text/css");  
+		scriptNode.setAttribute("type", "text/javascript");  
+		  
+		if(getBrowser()=="IE"){
+		    scriptNode.setAttribute("src", "js/tabelcontrolmain.es5.js");  
+		}
+		else{  
+		    scriptNode.setAttribute("src", "js/tabelcontrolmain.js");  
+		}  
+		document.head.appendChild(linkNode);  
+		document.head.appendChild(scriptNode); 
+	}); 
+</script>
+<script type="text/javascript" src="../popshade/js/popshademain.js"></script>
+<!-- <script type="text/javascript" src="js/tabelcontrolmain.js"></script> -->
+<!-- <script type="text/javascript" src="js/tabelcontrolmain.es5.js"></script> -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		setTimeout(function(){
+			// 新new一个表格控件
+			var TabelControlMain = new $.TabelControlMain();
+			var obj = {
+				selfId: "tabelControl",
+				searchObj:'',
+				tabelObj: {
+					// 表头
+					items: [
+						{
+							id: "name",
+							width: "25%",
+							callback: function(){
 
-						}
-					},
-					{
-						id: "列表三",
-						width: "33.3%",
-						callback: function(){
+							}
+						},
+						{
+							id: "animal",
+							width: "25%",
+							callback: function(){
 
+							}
+						},
+						{
+							id: "age",
+							width: "25%",
+							callback: function(){
+
+							}
+						},
+						{
+							id: "gender",
+							width: "25%",
+							callback: function(){
+
+							}
 						}
-					}
-				]
-			},
-			btnObj: {
-				items: [
-					{
-						id: "添加"
-					},
-					{
-						id: "删除"
-					}
-				]
-			}
-		};
-		TabelControlMain.init(obj);
+					],
+					// 表格初始数据
+					datas: [
+						{	
+							name: "Timy",
+							animal: "dog",
+							age: "2years",
+							gender: "man"
+						},
+						{	
+							name: "Maria",
+							animal: "cat",
+							age: "1years",
+							gender: "woman"
+						},
+						{	
+							name: "Tom",
+							animal: "cat",
+							age: "4years",
+							gender: "man"
+						},
+						{	
+							name: "Jack",
+							animal: "fish",
+							age: "3months",
+							gender: "woman"
+						}
+					]
+				},
+				btnObj: {
+					items: [
+						{
+							id: "添加",
+							callback: function(id){
+								console.log(id);
+								TabelControlMain.add();
+							}
+						},
+						{
+							id: "删除",
+							callback: function(id){
+								console.log(id);
+							}
+						}
+					]
+				}
+			};
+			TabelControlMain.init(obj);
+		},50);
 	});
 </script>
 

@@ -10,6 +10,7 @@
 	float: left;
 
 	/*style*/
+	z-index: 0;
 }
 .tabelControlStyle{
 	/*position*/
@@ -33,32 +34,55 @@
 	/*style*/
 	border-style: solid;
 	border-color: #fff;
-	border-width: 0px 1px 0px 0px;
+	border-width: 0px 0px 0px 0px;
 }
-.tabelLi{
+.tabelHeadLi{
 	/*position*/
 	position: relative;
 	float: left;
+	height: 30px;
 
 	/*style*/
+	line-height: 30px;
 	list-style: none;
 	font-family: "Microsoft YaHei";
 	font-size: 14px;
+	font-weight: 700;
 	color: #787a8d;
 	text-align: center;
 	border-style: solid;
 	border-color: #fff;
 	border-width: 1px 0px 1px 1px;
 	cursor: pointer;
+	background: #ccc;
+	margin-left: -1px;
+}
+.tabelLi{
+	/*position*/
+	position: relative;
+	float: left;
+	height: 20px;
+
+	/*style*/
+	list-style: none;
+	font-family: "Microsoft YaHei";
+	font-size: 12px;
+	color: #787a8d;
+	text-align: center;
+	border-style: solid;
+	border-color: #fff;
+	border-width: 0px 0px 1px 1px;
+	cursor: pointer;
 	background: #ddd;
 	margin-left: -1px;
 }
+
 .btnBox{
 	/*position*/
 	position: relative;
 	width: 100%;
 	height: 50px;
-	float: left;
+	display: inline-block;
 
 	/*style*/
 	background: #fff;
