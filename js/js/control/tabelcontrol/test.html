@@ -3,8 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<title>tabel control</title>
+	<style type="text/css">
+		.app{
+			/*position*/
+			width: 100%;
+			height: auto;
+			position: relative;
+			float: left;
+
+			/*style*/
+			z-index: 0;
+		}
+	</style>
 	<link rel="stylesheet" type="text/css" href="../tabelcontrol/css/main.css">
 	<link rel="stylesheet" type="text/css" href="../popshade/css/main.css">
+	<link rel="stylesheet" type="text/css" href="../inputbox/css/main.css">
 </head>
 <body>
 	<div id="app" class="app" style="z-index: 0;">
@@ -54,6 +67,7 @@
 	}); 
 </script>
 <script type="text/javascript" src="../popshade/js/popshademain.js"></script>
+<script type="text/javascript" src="../inputbox/js/inoutboxmain.js"></script>
 <!-- <script type="text/javascript" src="js/tabelcontrolmain.js"></script> -->
 <!-- <script type="text/javascript" src="js/tabelcontrolmain.es5.js"></script> -->
 <script type="text/javascript">
@@ -62,6 +76,8 @@
 			// 新new一个表格控件
 			var TabelControlMain = new $.TabelControlMain();
 			var obj = {
+				bIsCheckBox: true,
+				checkBoxWidth: "8%",
 				selfId: "tabelControl",
 				searchObj:'',
 				tabelObj: {
@@ -69,28 +85,28 @@
 					items: [
 						{
 							id: "name",
-							width: "25%",
+							width: "23%",
 							callback: function(){
 
 							}
 						},
 						{
 							id: "animal",
-							width: "25%",
+							width: "23%",
 							callback: function(){
 
 							}
 						},
 						{
 							id: "age",
-							width: "25%",
+							width: "23%",
 							callback: function(){
 
 							}
 						},
 						{
 							id: "gender",
-							width: "25%",
+							width: "23%",
 							callback: function(){
 
 							}
@@ -137,6 +153,7 @@
 							id: "删除",
 							callback: function(id){
 								console.log(id);
+								TabelControlMain.del();
 							}
 						}
 					]
