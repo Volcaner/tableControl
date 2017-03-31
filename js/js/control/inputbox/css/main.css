@@ -1,0 +1,53 @@
+.inputBoxGroup{
+	/*position*/
+	height: 22px;
+	position: relative;
+	float: left;
+
+	/*style*/
+}
+.inputBoxGroup div.inputLabel{
+	/*position*/
+	max-width: 100px;
+	height: 22px;
+	position: relative;
+	float: left;
+
+	/*style*/
+	color: #787a8d;
+	text-align: center;
+	min-height: 22px;
+	white-space: nowrap;  /*不换行*/
+	text-overflow: ellipsis;  /*超出部分省略号表示*/
+	overflow: hidden;
+	display: block;
+}
+.inputBoxGroup input{
+	/*position*/
+	position: relative;
+	height: 18px;
+	float: right;
+
+	/*style*/
+}
+.inputBoxGroup div.dropDownMenu{
+	/*position*/
+	position: relative;
+	float: right;
+	width: 20px;
+	height: 20px;
+
+	/*style*/
+	border: solid 1px #aaa;
+	text-align: center;
+	line-height: 20px;
+	background: #aaa;
+}
+.inputBoxGroup select{
+	/*position*/
+	position: relative;
+	float: right;
+
+	/*style*/
+	visibility: hidden;
+}

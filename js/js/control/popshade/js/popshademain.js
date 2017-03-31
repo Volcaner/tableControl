@@ -47,7 +47,7 @@
 				}, 5);
 			}
 			if(obj && obj.callback){
-				obj.callback("messageBox");
+				obj.callback("messageBox", "popShadeBoxFoot");
 			}
 
 			$("#closeBtn").click(function(){
