@@ -26,49 +26,9 @@
 </body>
 
 <script type="text/javascript" src="js/lib/jquery.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		// 解决部分浏览器不支持ES6问题
-		var getBrowser = function(){    
-		    var ua = window.navigator.userAgent;    
-		    var isIE = !!window.ActiveXObject || "ActiveXObject" in window;    
-		    var isFirefox = ua.indexOf("Firefox") != -1;    
-		    var isOpera = window.opr != undefined;    
-		    var isChrome = ua.indexOf("Chrome") && window.chrome;    
-		    var isSafari = ua.indexOf("Safari") != -1 && ua.indexOf("Version") != -1;    
-		    if (isIE) {    
-		        return "IE";    
-		    } else if (isFirefox) {    
-		        return "Firefox";    
-		    } else if (isOpera) {    
-		        return "Opera";    
-		    } else if (isChrome) {    
-		        return "Chrome";    
-		    } else if (isSafari) {    
-		        return "Safari";    
-		    } else {    
-		        return "Unkown";    
-		    }    
-		}  
-
-		var linkNode = document.createElement("link"),scriptNode = document.createElement("script");  
-		linkNode.setAttribute("rel","stylesheet");  
-		linkNode.setAttribute("type","text/css");  
-		scriptNode.setAttribute("type", "text/javascript");  
-		  
-		if(getBrowser()=="IE"){
-		    scriptNode.setAttribute("src", "js/js/control/tabelcontrol/js/tabelcontrolmain.es5.js");  
-		}
-		else{  
-		    scriptNode.setAttribute("src", "js/js/control/tabelcontrol/js/tabelcontrolmain.js");  
-		}  
-		document.head.appendChild(linkNode);  
-		document.head.appendChild(scriptNode); 
-	}); 
-</script>
 <script type="text/javascript" src="js/js/control/popshade/js/popshademain.js"></script>
 <script type="text/javascript" src="js/js/control/inputbox/js/inoutboxmain.js"></script>
-<!-- <script type="text/javascript" src="js/tabelcontrolmain.js"></script> -->
+<script type="text/javascript" src="js/js/control/tabelcontrol/js/tabelcontrolmain.js"></script>
 <!-- <script type="text/javascript" src="js/tabelcontrolmain.es5.js"></script> -->
 <script type="text/javascript">
 	$(document).ready(function(){
